@@ -64,6 +64,8 @@
     ];
   };
 
+  security.sudo.wheelNeedsPassword = false;
+
   environment.systemPackages = with pkgs; [
     neovim
     k3s
