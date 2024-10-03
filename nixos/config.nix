@@ -25,7 +25,7 @@
   };
 
   systemd.tmpfiles.rules = [
-    "L+ /usr/share/bin - - - - /run/current-system/sw/bin/"
+    "L+ /usr/local/bin - - - - /run/current-system/sw/bin/"
   ];
   virtualisation.docker.enable = true;
   virtualisation.docker.logDriver = "json-file";
