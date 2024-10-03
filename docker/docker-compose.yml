@@ -1,0 +1,36 @@
+services:
+  nixos_0:
+    build: .
+    network_mode: host
+    volumes:
+      - root_cache_0:/root
+      - ../nixos:/nixos
+    environment:
+      - PASS=1234
+      - IP=192.168.178.102
+      - CONFIG=homelab-0
+  nixos_1:
+    build: .
+    network_mode: host
+    volumes:
+      - root_cache_1:/root
+      - ../nixos:/nixos
+    environment:
+      - PASS=1234
+      - IP=192.168.178.98
+      - CONFIG=homelab-1
+  nixos_2:
+    build: .
+    network_mode: host
+    volumes:
+      - root_cache_2:/root
+      - ../nixos:/nixos
+    environment:
+      - PASS=1234
+      - IP=192.168.178.99
+      - CONFIG=homelab-2
+
+volumes:
+  root_cache_0:
+  root_cache_1:
+  root_cache_2:
