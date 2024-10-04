@@ -27,7 +27,6 @@
   systemd.tmpfiles.rules = [
     "L+ /usr/local/bin - - - - /run/current-system/sw/bin/"
   ];
-  virtualisation.docker.enable = true;
   virtualisation.docker.logDriver = "json-file";
 
   services.k3s = {

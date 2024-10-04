@@ -1,0 +1,9 @@
+app:
+  ingress:
+    enabled: true
+    hosts:
+      - "dashboard.home"
+    ingressClassName: nginx-internal
+kong:
+  proxy:
+    type: LoadBalancer
