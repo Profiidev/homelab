@@ -13,6 +13,10 @@ repositories:
     url: https://kubernetes.github.io/dashboard/
   - name: cowboysysop
     url: https://cowboysysop.github.io/charts/
+  - name: rancher
+    url: https://releases.rancher.com/server-charts/stable
+  - name: jetstack
+    url: https://charts.jetstack.io
 ---
 releases:
   # storage
@@ -51,14 +55,22 @@ releases:
     values:
       - ./values/externaldns.values.yaml
 
-  # dashboard
-  - name: kubernetes-dashboard
-    namespace: kubernetes-dashboard
-    chart: kubernetes-dashboard/kubernetes-dashboard
-    version: 7.6.1
+  #certs
+  - name: cert-manager
+    namespace: cert-manager
+    chart: jetstack/cert-manager
+    version: 1.16.0
     values:
-      - ./values/kubernetes-dashboard.values.yaml
-    
+      - ./values/cert-manager.values.yaml
+
+  #rancher
+  - name: rancher
+    namespace: cattle-system
+    chart: rancher/rancher
+    version: 2.9.2
+    values:
+      - ./values/rancher.values.yaml
+
   # kubeview
   - name: kubeview
     namespace: kubeview
@@ -66,4 +78,3 @@ releases:
     version: 5.1.0
     values:
       - ./values/kubeview.values.yaml
-    

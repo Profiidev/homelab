@@ -7,4 +7,5 @@ controller:
     parameters: {}
 
   ingressClass: nginx-internal
+  watchIngressWithoutClass: false
 
